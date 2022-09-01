@@ -1,12 +1,11 @@
 import tkinter as tk
 from tkinter import *
 import tkinter.messagebox
-
 # create a window for the gui
 root = tk.Tk()
 # create the window tittle
 root.title("Franspai Currency converter")
-Tops = Frame(root, width=2000, height=400, relief="ridge")
+Tops = Frame(root, width=1000, height=400, relief="ridge")
 Tops.grid(row=0, column=0)
 headlabel = tk.Label(Tops, font=('Helvetica', 30, 'bold'), text="\n     Franspai's Currency converter", bg='white', fg='black')
 headlabel.grid(row=1, column=0, sticky=W)
@@ -43,22 +42,22 @@ def clear_all():
 CurrenyCode_list = ["PLN", "INR", "USD", "CAD", "CNY", "DKK", "EUR", "GBP", "CHF", "JPY", "SEK", "CZK"]
 
 root.configure(background='white')
-root.geometry("700x400")
+root.geometry("700x425")
 
 Label_1 = Label(root, font=('Helvetica', 27, 'bold'), text="", padx=2, pady=2, bg="white", fg="black")
 Label_1.grid(row=1, column=0, sticky=W)
 label1 = tk.Label(root, font=('Helvetica', 15, 'bold'), text="\t    Amount  :  ", bg="white", fg="black")
 label1.grid(row=2, column=0, sticky=W)
-label1 = tk.Label(root, font=('Helvetica', 15, 'bold'), text="\t    From  :  ", bg="white", fg="black")
-label1.grid(row=3, column=0, sticky=W)
-label1 = tk.Label(root, font=('Helvetica', 15, 'bold'), text="\t    To  :  ", bg="white", fg="black")
-label1.grid(row=4, column=0, sticky=W)
-label1 = tk.Label(root, font=('Helvetica', 15, 'bold'), text="\t    Converted  :  ", bg="white", fg="black")
-label1.grid(row=8, column=0, sticky=W)
-Label_1 = Label(root, font=('Helvetica', 7, 'bold'), text="", padx=2, pady=2, bg="white", fg="black")
-Label_1.grid(row=5, column=0, sticky=W)
-Label_1 = Label(root, font=('Helvetica', 7, 'bold'), text="", padx=2, pady=2, bg="white", fg="black")
-Label_1.grid(row=7, column=0, sticky=W)
+label2 = tk.Label(root, font=('Helvetica', 15, 'bold'), text="\t    From  :  ", bg="white", fg="black")
+label2.grid(row=3, column=0, sticky=W)
+label3 = tk.Label(root, font=('Helvetica', 15, 'bold'), text="\t    To  :  ", bg="white", fg="black")
+label3.grid(row=4, column=0, sticky=W)
+label4 = tk.Label(root, font=('Helvetica', 15, 'bold'), text="\t    Converted  :  ", bg="white", fg="black")
+label4.grid(row=8, column=0, sticky=W)
+Label_2 = Label(root, font=('Helvetica', 7, 'bold'), text="", padx=2, pady=2, bg="white", fg="black")
+Label_2.grid(row=5, column=0, sticky=W)
+Label_3 = Label(root, font=('Helvetica', 7, 'bold'), text="", padx=2, pady=2, bg="white", fg="black")
+Label_3.grid(row=7, column=0, sticky=W)
 
 FromCurrency_option = tk.OptionMenu(root, var1, *CurrenyCode_list)
 ToCurrency_option = tk.OptionMenu(root, var2, *CurrenyCode_list)
@@ -88,22 +87,36 @@ switch_value = True
 def toggle():
     global switch_value
     if switch_value:
-        switch.config(image=dark, bg="#ba25b5",
-                      activebackground="#ba25b5")
+        switch.config(image=dark, activebackground="black", background="black", fg="white")
 
         # change window color
         root.config(bg="black")
+        label1.config(bg="black", fg="white")
+        label2.config(bg="black", fg="white")
+        label3.config(bg="black", fg="white")
+        label4.config(bg="black", fg="white")
+        headlabel.config(bg="black", fg="white")
+        Label_1.config(bg="black")
+        Label_2.config(bg="black")
+        Label_3.config(bg="black")
         switch_value = False
 
     else:
-        switch.config(image=light, bg="white",
-                      activebackground="white")
+        switch.config(image=light, bg="white", activebackground="white", fg="black")
 
         # Change back to light
         root.config(bg="white")
+        label1.config(bg="white", fg="black")
+        label2.config(bg="white", fg="black")
+        label3.config(bg="white", fg="black")
+        label4.config(bg="white", fg="black")
+        headlabel.config(bg="white", fg="black")
+        Label_1.config(bg="white")
+        Label_2.config(bg="white")
+        Label_3.config(bg="white")
         switch_value = True
 
-switch = Button(root, image=light, bd=0, bg="white", activebackground="white", command=toggle)
-switch.grid(row=1, column=0, padx=5, pady=10)
+switch = Button(root, image=light, bd=0, command=toggle)
+switch.grid(row=1, column=0)
 
 root.mainloop()
