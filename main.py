@@ -104,4 +104,5 @@ def toggle():
 
 switch = Button(root, image=light, bd=0, bg="white", activebackground="white", command=toggle)
 switch.grid(row=1, column=0, padx=5, pady=10)
+
 root.mainloop()
