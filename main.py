@@ -116,6 +116,7 @@ def toggle():
         Label_3.config(bg="white")
         switch_value = True
 
+
 switch = Button(root, image=light, bd=0, command=toggle)
 switch.grid(row=1, column=0)
 
