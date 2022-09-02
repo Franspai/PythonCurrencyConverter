@@ -128,4 +128,6 @@ def toggle():
 switch = Button(root, image=light, bd=0, command=toggle)
 switch.grid(row=1, column=0)
 
+root.resizable(0, 0)
+
 root.mainloop()
