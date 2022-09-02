@@ -42,8 +42,9 @@ def clear_all():
 CurrenyCode_list = ["PLN", "INR", "USD", "CAD", "CNY", "DKK", "EUR", "GBP", "CHF", "JPY", "SEK", "CZK"]
 
 root.configure(background='white')
-root.geometry("700x425")
+root.geometry("725x425")
 
+# Lables and lable styles
 Label_1 = Label(root, font=('Helvetica', 27, 'bold'), text="", padx=2, pady=2, bg="white", fg="black")
 Label_1.grid(row=1, column=0, sticky=W)
 label1 = tk.Label(root, font=('Helvetica', 15, 'bold'), text="\t    Amount  :  ", bg="white", fg="black")
@@ -61,17 +62,17 @@ Label_3.grid(row=7, column=0, sticky=W)
 
 FromCurrency_option = tk.OptionMenu(root, var1, *CurrenyCode_list)
 ToCurrency_option = tk.OptionMenu(root, var2, *CurrenyCode_list)
-FromCurrency_option.grid(row=3, column=0, ipadx=45, sticky=E)
-ToCurrency_option.grid(row=4, column=0, ipadx=45, sticky=E)
+FromCurrency_option.grid(row=3, column=0, ipadx=40, sticky=E)
+ToCurrency_option.grid(row=4, column=0, ipadx=40, sticky=E)
 Amount1_field = tk.Entry(root)
-Amount1_field.grid(row=2, column=0, ipadx=28, sticky=E)
+Amount1_field.grid(row=2, column=0, ipadx=15, sticky=E)
 Amount2_field = tk.Entry(root)
-Amount2_field.grid(row=8, column=0, ipadx=31, sticky=E)
+Amount2_field.grid(row=8, column=0, ipadx=15, sticky=E)
 Label_9 = Button(root, font=('arial', 15, 'bold'), text="   Convert  ", padx=2, pady=2, bg="#ba25b5", fg="white",
                  command=CurrencyConversion)
 Label_9.grid(row=6, column=0)
-Label_1 = Label(root, font=('Helvetica', 7, 'bold'), text="", padx=2, pady=2, bg="white", fg="black")
-Label_1.grid(row=9, column=0, sticky=W)
+Label_4 = Label(root, font=('Helvetica', 7, 'bold'), text="", padx=2, pady=2, bg="white", fg="black")
+Label_4.grid(row=9, column=0, sticky=W)
 Label_9 = Button(root, font=('arial', 15, 'bold'), text="   Clear All  ", padx=2, pady=2, bg="#ba25b5", fg="white",
                  command=clear_all)
 Label_9.grid(row=10, column=0)
@@ -80,6 +81,7 @@ light = PhotoImage(file="lighton.png")
 dark = PhotoImage(file="lightoff.png")
 
 switch_value = True
+
 
 # Button toggle light and dark
 
@@ -99,6 +101,7 @@ def toggle():
         Label_1.config(bg="black")
         Label_2.config(bg="black")
         Label_3.config(bg="black")
+        Label_4.config(bg="black")
         switch_value = False
 
     else:
@@ -114,6 +117,7 @@ def toggle():
         Label_1.config(bg="white")
         Label_2.config(bg="white")
         Label_3.config(bg="white")
+        Label_4.config(bg="white")
         switch_value = True
 
 
