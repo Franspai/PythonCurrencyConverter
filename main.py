@@ -16,6 +16,8 @@ var2 = tk.StringVar(root)
 var1.set("currency")
 var2.set("currency")
 # get currency conversion rates
+
+
 def CurrencyConversion():
     from forex_python.converter import CurrencyRates
     c = CurrencyRates()
@@ -35,9 +37,11 @@ def CurrencyConversion():
         new_amount = float("{:.4f}".format(new_amt))
         Amount2_field.insert(0, str(new_amount))
 
+
 def clear_all():
-        Amount1_field.delete(0, tk.END)
-        Amount2_field.delete(0, tk.END)
+    Amount1_field.delete(0, tk.END)
+    Amount2_field.delete(0, tk.END)
+
 
 CurrenyCode_list = ["PLN", "INR", "USD", "CAD", "CNY", "DKK", "EUR", "GBP", "CHF", "JPY", "SEK", "CZK"]
 
