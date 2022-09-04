@@ -1,5 +1,5 @@
 # Python Currency Converter using tkinter GUI
 
 Dependencies:
-tkinter
+tkinter,
 forex-python
