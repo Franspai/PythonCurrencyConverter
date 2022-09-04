@@ -1,7 +1,5 @@
 # Python Currency Converter using tkinter GUI
 
-Dependencies to install
+Dependencies:
 tkinter
 forex-python
-
-Currently dark mode is a bit broken but should be fixed soon
